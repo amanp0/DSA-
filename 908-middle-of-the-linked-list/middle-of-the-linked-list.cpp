@@ -17,15 +17,15 @@ public:
             return head; 
 
         //2 nodes - 
-        if(head -> next -> next == NULL)
-            return head -> next;
+        // if(head -> next -> next == NULL)
+        //     return head -> next;
 
         ListNode* slow = head;
         ListNode* fast = head -> next;
 
         while(fast != NULL){
             fast = fast -> next;
-            if(fast != NULL){
+            if(fast != NULL) {
                 fast = fast -> next;
             }
             slow = slow -> next;
