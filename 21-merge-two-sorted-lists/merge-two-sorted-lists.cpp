@@ -12,9 +12,9 @@ class Solution {
 public:
 
 ListNode* solve(ListNode* list1, ListNode* list2){
-
+    //if list has only one element in first list
     if(list1 -> next == NULL){
-        list1 -> next = list2;
+        list1 -> next = list2; 
         return list1;
     }
     ListNode* curr1 = list1;
@@ -24,10 +24,13 @@ ListNode* solve(ListNode* list1, ListNode* list2){
 
     while(next1 != NULL && curr2 != NULL){
         if((curr2 -> val >= curr1 -> val) && (curr2 -> val <= next1 -> val)){
+
+            //add node in b/t the first list
             curr1 -> next = curr2;
             next2 = curr2 -> next;
             curr2 -> next = next1;
 
+            //update pointers
             curr1 =curr2;
             curr2 = next2;
         }
